@@ -1,0 +1,252 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* General Styles */
+body, html {
+    scroll-behavior: smooth;
+    background-color: #f0f4f8;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style-type: none;
+}
+
+.nav-links a {
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #007acc;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5em;
+    color: #fff;
+    cursor: pointer;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: url('https://knowhow.distrelec.com/wp-content/uploads/2022/11/cybersecurity-1920x800.png') center/cover;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    animation: fadeIn 2s ease;
+    padding-top: 80px;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-top: 10px;
+    color: #ccc;
+}
+
+/* About Section */
+.about {
+    padding: 100px 20px;
+    background-color: #f0f4f8;
+    text-align: center;
+}
+
+.about h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #007acc;
+    margin: 10px auto;
+}
+
+.about-text {
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: left;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: slideIn 1.5s ease;
+}
+
+/* Portfolio Section */
+.portfolio {
+    padding: 60px 20px;
+    background-color: #e0f7fa;
+    text-align: center;
+}
+
+.portfolio h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #007acc;
+    margin: 10px auto;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.portfolio-item {
+    background-color: #007acc;
+    color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: scale(1.05);
+}
+
+/* Contact Section */
+.contact {
+    padding: 60px 20px;
+    background-color: #f0f4f8;
+    text-align: center;
+}
+
+.contact h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #007acc;
+    margin: 10px auto;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+    animation: fadeIn 1.5s ease;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1em;
+}
+
+.contact-item i {
+    font-size: 1.5em;
+    color: #007acc;
+    transition: color 0.3s;
+}
+
+.contact-item:hover i {
+    color: #005f99;
+}
+
+/* Footer */
+footer {
+    padding: 15px;
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    0% { opacity: 0; transform: translateX(-50px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 250px;
+        background-color: #333;
+        flex-direction: column;
+        gap: 15px;
+        padding-top: 60px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+    }
+    .nav-links.active {
+        transform: translateX(0);
+    }
+    .menu-toggle {
+        display: block;
+    }
+}
+/* Specific Colors */
+.red {
+    color: #FF0000; /* Red color for 'Suryansh Srivastava' */
+}
+
+.cybersecurity {
+    color: #007acc; /* Blue color for 'cybersecurity' */
+}
+
+.ai-ml {
+    color: #28a745; /* Green color for 'AI/ML' */
+}
+
+.ml {
+    color: #ff8c00; /* Orange color for 'Machine Learning' */
+}
+
+.ai {
+    color: #ff69b4; /* Pink color for 'Artificial Intelligence' */
+}

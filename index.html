@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">͓͓̽̽S͓͓̽̽U͓͓̽̽R͓͓̽̽Y͓͓̽̽A͓͓̽̽N͓͓̽̽S͓͓̽̽H͓̽ ͓̽S͓͓̽̽R͓͓̽̽I͓͓̽̽V͓͓̽̽A͓͓̽̽S͓͓̽̽T͓͓̽̽A͓͓̽̽V͓͓̽̽A͓̽  </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <!-- Mobile Menu Toggle Button -->
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Welcome to My Portfolio</h1>
+        <p>Showcasing my work and projects</p>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p><span class="greeting">Hello, and welcome to my portfolio! 😀</span></p>
+                <p>I'm <span class="name red">Suryansh Srivastava</span>, a <span class="highlight cybersecurity">Cybersecurity</span> and <span class="highlight ai-ml">AI/ML enthusiast</span> with a passion for protecting and enhancing online security. My mission is to create a safer internet environment, where people can feel secure and protected as they explore the digital world.</p>
+                <p>My personal goal is to fuse <span class="highlight ml">Machine Learning</span> with <span class="highlight cybersecurity">Cybersecurity</span>—harnessing the power of <span class="highlight ai">Artificial Intelligence</span> to improve security solutions and make the internet even safer. Through innovative approaches and dedication, I aim to make a positive impact on the world of digital security.</p>
+                <p class="closing">Thank you for visiting my site, and I hope you enjoy exploring my work! 😊</p>
+            </div>
+        </div>
+    </section>
+    
+    
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <h2>My Work</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">Project 1</div>
+            <div class="portfolio-item">Project 2</div>
+            <div class="portfolio-item">Project 3</div>
+            <div class="portfolio-item">Project 4</div>
+            <div class="portfolio-item">Project 5</div>
+            
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <div class="contact-details">
+            <div class="contact-item" data-aos="fade-up">
+                <i class="fas fa-phone-alt"></i>
+                <p><strong>Phone:</strong> <a href="tel:+919125916986">+91-9125916986</a></p>
+            </div>
+            <div class="contact-item" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-envelope"></i>
+                <p><strong>Email:</strong> <a href="mailto:dhawalsri77@gmail.com">dhawalsri77@gmail.com</a></p>
+            </div>
+            <div class="contact-item" data-aos="fade-up" data-aos-delay="200">
+                <i class="fab fa-linkedin"></i>
+                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/suryansh-srivastava-746113292" target="_blank">Suryansh Srivastava</a></p>
+            </div>
+        </div>
+    </section>
+    
+
+    <footer>
+        <p>&copy; 2024 SURYANSH SRIVASTAVA. All rights reserved.</p>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const items = document.querySelectorAll("[data-aos]");
+    
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = "translateY(0)";
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+    
+            items.forEach(item => {
+                observer.observe(item);
+            });
+        });
+    </script>
+    
+</body>
+<script>
+    function toggleMenu() {
+        document.querySelector('.nav-links').classList.toggle('active');
+    }
+</script>
+
+</html>
