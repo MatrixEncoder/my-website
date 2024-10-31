@@ -6,12 +6,11 @@
     <title>Your Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
 </head>
 <body>
     <!-- Navbar -->
     <nav>
-        <div class="logo">͓͓̽̽S͓͓̽̽U͓͓̽̽R͓͓̽̽Y͓͓̽̽A͓͓̽̽N͓͓̽̽S͓͓̽̽H͓̽ ͓̽S͓͓̽̽R͓͓̽̽I͓͓̽̽V͓͓̽̽A͓͓̽̽S͓͓̽̽T͓͓̽̽A͓͓̽̽V͓͓̽̽A͓̽  </div>
+        <div class="logo">𝙲𝚢𝚋𝚎𝚛-𝚂𝚎𝚗𝚝𝚒𝚗𝚎𝚕</div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -20,7 +19,7 @@
         </ul>
     </nav>
     <!-- Mobile Menu Toggle Button -->
-<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
@@ -40,19 +39,16 @@
             </div>
         </div>
     </section>
-    
-    
 
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio">
-        <h2>My Work</h2>
+        <h2>My Projects</h2>
         <div class="portfolio-grid">
             <div class="portfolio-item">Project 1</div>
             <div class="portfolio-item">Project 2</div>
             <div class="portfolio-item">Project 3</div>
             <div class="portfolio-item">Project 4</div>
             <div class="portfolio-item">Project 5</div>
-            
         </div>
     </section>
 
@@ -74,36 +70,33 @@
             </div>
         </div>
     </section>
-    
 
     <footer>
         <p>&copy; 2024 SURYANSH SRIVASTAVA. All rights reserved.</p>
     </footer>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const items = document.querySelectorAll("[data-aos]");
     
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const portfolioItems = document.querySelectorAll(".portfolio-item");
+
+            // Intersection Observer for animating portfolio items
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.style.opacity = 1;
-                        entry.target.style.transform = "translateY(0)";
-                        observer.unobserve(entry.target);
+                        entry.target.classList.add("visible"); // Add visible class to trigger animation
+                        observer.unobserve(entry.target); // Stop observing once the item is visible
                     }
                 });
-            }, { threshold: 0.5 });
-    
-            items.forEach(item => {
-                observer.observe(item);
+            });
+
+            portfolioItems.forEach(item => {
+                observer.observe(item); // Observe each portfolio item
             });
         });
-    </script>
-    
-</body>
-<script>
-    function toggleMenu() {
-        document.querySelector('.nav-links').classList.toggle('active');
-    }
-</script>
 
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+    </script>
+</body>
 </html>
