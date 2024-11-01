@@ -1,0 +1,33 @@
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
+  gap: 20px; /* Space between items */
+}
+
+.portfolio-item {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  text-align: center;
+  transition: box-shadow 0.3s ease; /* Only transition shadow */
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+/* Remove scale effect to prevent scrollbar glitch */
+.portfolio-item:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+  animation: pulse 0.5s infinite; /* Pulsing effect */
+}
+
+/* Optional: Add a pulse effect */
+@keyframes pulse {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.02); /* Slightly scale */
+  }
+  100% {
+      transform: scale(1);
+  }
+}

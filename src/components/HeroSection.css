@@ -1,0 +1,54 @@
+.hero {
+  background: url("C:\Windows\System32\my-portfolio\src\assets\mainIm.jpg") no-repeat center center/cover; /* Add your background image */
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  position: relative; /* For absolute positioning of child elements */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1; /* Ensure text appears above the background */
+  animation: fadeIn 1.5s ease; /* Fade-in animation for the content */
+}
+
+h1 {
+  font-size: 3rem; /* Large heading */
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.5rem; /* Size of the paragraph */
+  margin-bottom: 30px;
+}
+
+.btn {
+  background-color: #ff4500; /* Button color */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+.btn:hover {
+  background-color: #ffa500; /* Change color on hover */
+  transform: scale(1.05); /* Slight scale up on hover */
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px); /* Slide in from above */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

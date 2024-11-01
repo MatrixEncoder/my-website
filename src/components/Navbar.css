@@ -1,0 +1,62 @@
+nav {
+  background: #333;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Added shadow for depth */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth color and transform transition */
+}
+
+/* Hover effect for nav links */
+.nav-links a:hover {
+  color: #ffa500; /* Change color on hover */
+  transform: scale(1.1); /* Slightly scale up on hover */
+}
+
+/* Mobile menu toggle button */
+.menu-toggle {
+  display: none; /* Hidden by default, you can style it separately for mobile */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Hide nav links in mobile view */
+  }
+
+  .nav-links.active {
+    display: flex; /* Show nav links when menu is toggled */
+    flex-direction: column; /* Stack links vertically */
+    position: absolute; /* Positioning for dropdown */
+    background: #333; /* Match background */
+    width: 100%; /* Full width */
+    top: 60px; /* Below the navbar */
+    left: 0; /* Align to the left */
+    z-index: 1000; /* Above other elements */
+  }
+
+  .menu-toggle {
+    display: block; /* Show toggle button in mobile view */
+    cursor: pointer; /* Pointer cursor */
+    font-size: 1.5rem; /* Adjust font size */
+    color: #fff; /* Color for toggle button */
+  }
+}
