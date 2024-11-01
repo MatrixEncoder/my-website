@@ -1,53 +1,65 @@
 .hero {
-  background: url("C:\Windows\System32\my-portfolio\src\assets\mainIm.jpg") no-repeat center center/cover; /* Add your background image */
-  height: 100vh; /* Full viewport height */
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(34, 193, 195, 0.8)), url("C:\Windows\System32\my-portfolio\src\assets\mainIm.jpg") no-repeat center center/cover; /* Faint background image */
+  height: 100vh; /* Full height */
   display: flex;
-  justify-content: center;
   align-items: center;
-  color: #fff;
+  justify-content: center;
   text-align: center;
-  position: relative; /* For absolute positioning of child elements */
+  color: #fff;
+  position: relative;
+  overflow: hidden;
 }
 
 .hero-content {
   position: relative;
-  z-index: 1; /* Ensure text appears above the background */
-  animation: fadeIn 1.5s ease; /* Fade-in animation for the content */
+  z-index: 2; /* Ensures content is above the background */
 }
 
-h1 {
-  font-size: 3rem; /* Large heading */
+.hero-title {
+  font-size: 3rem; /* Responsive font size */
   margin-bottom: 20px;
+  animation: fadeInDown 1s ease-in-out; /* Fade-in animation */
 }
 
-p {
-  font-size: 1.5rem; /* Size of the paragraph */
+.hero-description {
+  font-size: 1.5rem; /* Slightly larger text */
   margin-bottom: 30px;
+  color: #ffcc00; /* Highlight color for description */
+  animation: fadeInUp 1s ease-in-out; /* Fade-in animation */
 }
 
 .btn {
   background-color: #ff4500; /* Button color */
   color: #fff;
   padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
   text-decoration: none;
-  font-size: 1.2rem;
-  transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+  border-radius: 5px;
+  transition: background-color 0.3s ease; /* Smooth button transition */
+  font-weight: bold; /* Bold button text */
 }
 
 .btn:hover {
-  background-color: #ffa500; /* Change color on hover */
-  transform: scale(1.05); /* Slight scale up on hover */
+  background-color: #ff6347; /* Lighter shade on hover */
 }
 
-/* Animation keyframes */
-@keyframes fadeIn {
-  from {
+/* Animations */
+@keyframes fadeInDown {
+  0% {
     opacity: 0;
-    transform: translateY(-20px); /* Slide in from above */
+    transform: translateY(-20px);
   }
-  to {
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
     opacity: 1;
     transform: translateY(0);
   }
