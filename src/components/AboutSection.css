@@ -1,17 +1,22 @@
 .about {
   padding: 50px 20px;
   background: rgba(244, 244, 244, 0.8); /* Semi-transparent background for contrast */
-  background-image: url("C:\Windows\System32\my-portfolio\src\assets\matthew-mcbrayer-qD9xzm7yK9U-unsplash.jpg"); /* Add your image path */
+  background-image: url("C:\\Windows\\System32\\my-portfolio\\src\\assets\\bharath-g-s-aLGiPJ4XRO4-unsplash.jpg"); /* Add your image path */
   background-size: cover; /* Make the background image cover the entire section */
   background-position: center; /* Center the image */
+  position: relative; /* Required for the pseudo-element */
   opacity: 1; /* Ensure the section is fully visible */
   animation: fadeIn 1.5s forwards; /* Fade in effect */
 }
 
+/* Text styling */
 .about h2 {
   text-align: center;
   margin-bottom: 20px;
-  color: #333; /* Make the section title darker for better visibility */
+  color: #ffcc00; /* A bright yellow color for better contrast */
+  font-size: 2.5em; /* Increase font size */
+  font-family: 'Arial Black', Arial, sans-serif; /* Bold font family */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a subtle shadow for depth */
 }
 
 .about-content {
@@ -21,17 +26,24 @@
   animation: fadeIn 1.5s forwards; /* Fade in effect */
   opacity: 1; /* Ensure the content is fully visible */
   animation-delay: 0.5s; /* Delay for content */
+  max-width: 800px; /* Limit width for better readability */
+  margin: auto; /* Center the content */
 }
 
 .about-text {
-  max-width: 600px;
-  line-height: 1.6;
+  line-height: 1.8; /* Improve line spacing for readability */
   text-align: left;
+  color: #ffffff; /* White color for better contrast */
+  font-size: 1.1em; /* Slightly increase text size */
+  font-family: 'Verdana', sans-serif; /* Change font family */
+  padding: 20px; /* Add padding around text */
+  background: rgba(0, 0, 0, 0.4); /* Darker background for the text area */
+  border-radius: 10px; /* Rounded corners for the text area */
 }
 
 /* Highlight styles */
 .highlight {
-  color: #ff4500; /* Example highlight color */
+  color: #ad1477; /* Bright orange color for highlights */
   font-weight: bold; /* Make highlighted text bold */
 }
 
@@ -43,6 +55,12 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.2); /* Black overlay with 20% opacity */
+  background: rgba(0, 0, 0, 0.3); /* Darker overlay with 30% opacity for contrast */
   z-index: 1; /* Ensure it sits above the background image */
+}
+
+/* Ensure text appears above the overlay */
+.about-content > * {
+  position: relative; /* Bring text above the overlay */
+  z-index: 2; /* Ensure text appears above the overlay */
 }

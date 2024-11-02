@@ -1,3 +1,14 @@
+/* Portfolio Section Styles */
+.portfolio-section {
+  padding: 50px 20px;
+  background: 
+    linear-gradient(135deg, rgba(224, 247, 250, 0.7), rgba(255, 204, 188, 0.7)), /* Gradient with transparency */
+    url("https://images.unsplash.com/photo-1492892132812-a00a8b245c45?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") no-repeat center center / cover; /* Background image */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+/* Portfolio Grid Styles */
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
@@ -9,11 +20,13 @@
   border: 1px solid #ccc;
   padding: 20px;
   text-align: center;
-  transition: box-shadow 0.3s ease; /* Only transition shadow */
+  transition: box-shadow 0.3s ease; /* Smooth shadow transition */
   cursor: pointer; /* Change cursor to pointer */
+  position: relative; /* Required for pseudo-element */
+  overflow: hidden; /* Prevent overflow from animations */
 }
 
-/* Remove scale effect to prevent scrollbar glitch */
+/* Hover Effect */
 .portfolio-item:hover {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
   animation: pulse 0.5s infinite; /* Pulsing effect */
@@ -30,4 +43,43 @@
   100% {
       transform: scale(1);
   }
+}
+
+/* Add a colorful background animation to portfolio items */
+.portfolio-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 193, 7, 0.3); /* Light yellow overlay */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.5s ease; /* Smooth transition for the overlay */
+  z-index: 0; /* Position behind the content */
+}
+
+/* Show overlay on hover */
+.portfolio-item:hover::before {
+  opacity: 1; /* Fade in overlay on hover */
+}
+
+/* Ensure text is on top of the overlay */
+.portfolio-item h3,
+.portfolio-item p {
+  position: relative; /* Bring text above overlay */
+  z-index: 1; /* Ensure text appears above the overlay */
+}
+
+/* Style for Portfolio Item Title */
+.portfolio-item h3 {
+  margin: 10px 0;
+  font-size: 1.2em;
+  color: #333; /* Text color */
+}
+
+/* Style for Portfolio Item Description */
+.portfolio-item p {
+  color: #666; /* Text color */
+  font-size: 0.9em;
 }

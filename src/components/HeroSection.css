@@ -1,5 +1,5 @@
 .hero {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(34, 193, 195, 0.8)), url("C:\Windows\System32\my-portfolio\src\assets\mainIm.jpg") no-repeat center center/cover; /* Faint background image */
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(34, 193, 195, 0.8)), url('../assets/mainIm.jpg') no-repeat center center/cover; /* Updated path */
   height: 100vh; /* Full height */
   display: flex;
   align-items: center;

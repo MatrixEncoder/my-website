@@ -5,24 +5,76 @@ nav {
   justify-content: space-between;
   align-items: center;
   color: #fff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Added shadow for depth */
-  transition: background-color 0.3s ease; /* Smooth transition for background color */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+  position: relative; /* Set position for absolute elements inside */
+}
+
+.logo {
+  font-size: 1.5rem;
+}
+
+.menu-toggle {
+  display: block;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #fff;
+  z-index: 1000; /* Ensure the toggle button is above other content */
+}
+
+.slide-menu {
+  position: fixed;
+  top: 0;
+  right: -300px; /* Start hidden off-screen */
+  height: 100%;
+  width: 300px; /* Adjust as needed */
+  overflow: hidden; /* Prevent overflow */
+  z-index: 999; /* Ensure it's above other content */
+  transition: right 0.3s ease; /* Smooth slide-in effect */
+}
+
+.slide-menu.active {
+  right: 0; /* Slide in */
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover the entire menu */
+  z-index: -1; /* Place behind other content */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent black overlay */
+  z-index: 0; /* Overlay is above video but below links */
 }
 
 .nav-links {
   list-style: none;
+  padding: 20px; /* Add padding for the links */
   display: flex;
+  flex-direction: column; /* Stack links vertically */
+  position: relative; /* Ensure links are above video */
+  z-index: 1000; /* Place above video and overlay */
 }
 
 .nav-links li {
-  margin: 0 15px;
+  margin: 10px 0; /* Space between links */
 }
 
 .nav-links a {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s ease, transform 0.3s ease; /* Smooth color and transform transition */
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 /* Hover effect for nav links */
@@ -31,12 +83,7 @@ nav {
   transform: scale(1.1); /* Slightly scale up on hover */
 }
 
-/* Mobile menu toggle button */
-.menu-toggle {
-  display: none; /* Hidden by default, you can style it separately for mobile */
-}
-
-/* Responsive styles */
+/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
   .nav-links {
     display: none; /* Hide nav links in mobile view */
@@ -44,19 +91,9 @@ nav {
 
   .nav-links.active {
     display: flex; /* Show nav links when menu is toggled */
-    flex-direction: column; /* Stack links vertically */
-    position: absolute; /* Positioning for dropdown */
-    background: #333; /* Match background */
-    width: 100%; /* Full width */
-    top: 60px; /* Below the navbar */
-    left: 0; /* Align to the left */
-    z-index: 1000; /* Above other elements */
   }
 
   .menu-toggle {
     display: block; /* Show toggle button in mobile view */
-    cursor: pointer; /* Pointer cursor */
-    font-size: 1.5rem; /* Adjust font size */
-    color: #fff; /* Color for toggle button */
   }
 }
