@@ -1,7 +1,7 @@
 .about {
   padding: 50px 20px;
   background: rgba(244, 244, 244, 0.8); /* Semi-transparent background for contrast */
-  background-image: url("C:\\Windows\\System32\\my-portfolio\\src\\assets\\bharath-g-s-aLGiPJ4XRO4-unsplash.jpg"); /* Add your image path */
+  background-image: url("../assets/bharath-g-s-aLGiPJ4XRO4-unsplash.jpg"); /* Add your image path */
   background-size: cover; /* Make the background image cover the entire section */
   background-position: center; /* Center the image */
   position: relative; /* Required for the pseudo-element */
